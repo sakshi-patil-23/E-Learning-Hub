@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GATE Examination - E-Learning Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            background: url('https://img.freepik.com/premium-photo/3d-computer-books-about-learning_387680-513.jpg?w=996') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .content {
+            max-width: 1000px;
+            margin: 60px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2,
+        h3 {
+            color: #222;
+            margin-top: 30px;
+            border-left: 5px solid orange;
+            padding-left: 12px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        ul ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 15px 30px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* Dropdown styles (optional, simplified) */
+        
+        .dropdown,
+        .sub-dropdown {
+            display: none;
+            position: absolute;
+            background: #444;
+            top: 100%;
+            left: 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .nav-links li:hover>.dropdown {
+            display: block;
+        }
+        
+        .dropdown a {
+            display: block;
+            padding: 8px;
+            white-space: nowrap;
+        }
+        
+        .dropdown a:hover {
+            background: orange;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">E-Learning Hub 📚</div>
+        <ul class="nav-links">
+            <li><a href="firstpg.php">Study Material</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="update-profile.html">Profile</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2>About GATE Examination</h2>
+        <p>The <strong>Graduate Aptitude Test in Engineering (GATE)</strong> is a national-level exam that tests the comprehensive understanding of undergraduate subjects in engineering and science. It is useful for M.Tech admissions and PSU jobs.</p>
+
+        <h3>📝 Exam Pattern</h3>
+        <ul>
+            <li>Mode: Computer Based Test (CBT)</li>
+            <li>Duration: 3 hours</li>
+            <li>Types of Questions: MCQ, MSQ, NAT</li>
+            <li>Marks: 100</li>
+            <li>Negative Marking: Yes (for MCQs)</li>
+        </ul>
+
+        <h3>🎯 Tips to Crack GATE</h3>
+        <ul>
+            <li>Start early – at least 8–10 months before the exam.</li>
+            <li>Focus on concept clarity and practice.</li>
+            <li>Solve previous year papers and take online mock tests.</li>
+            <li>Use standard textbooks and video lectures.</li>
+        </ul>
+
+        <h3>📚 GATE Syllabus by Branch</h3>
+        <ul>
+            <li><strong>GATE:</strong> <a href="https://gate.iitk.ac.in/" target="_blank">Official Syllabus</a></li>
+            <li><strong>CSE:</strong> <a href="https://gate2025.iitr.ac.in/doc/2025/GATE%20_CS_2025_Syllabus.pdf" target="_blank" target="_blank">Syllabus PDF</a> | <a href="https://www.youtube.com/playlist?list=PLKKfKV1b9e8qSRr5v3cIhwE6L2vTgZIvq" target="_blank"
+                    target="_blank" target="_blank">Video Lectures (NPTEL + Gate Smashers)</a></li>
+            <li><strong>ECE:</strong> <a href="https://gate2025.iitr.ac.in/doc/2025/GATE%20_EC_2025_Syllabus.pdf" target="_blank">Syllabus PDF</a> | <a href="https://www.youtube.com/playlist?list=PL3C935B5E671B13E9" target="_blank">ECEDude YouTube Series</a></li>
+            <li><strong>Mechanical:</strong> <a href="https://gate2025.iitr.ac.in/doc/2025/GATE%20_ME_2025_Syllabus.pdf" target="_blank">Syllabus PDF</a></li>
+        </ul>
+        <h3>📚 Study Materials</h3>
+        <ul>
+            <li><a href="https://nptel.ac.in/" target="_blank">NPTEL Lectures</a></li>
+            <li><a href="https://gateoverflow.in/" target="_blank">GATE Overflow</a></li>
+            <li><a href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks for CSE</a></li>
+            <li><a href="https://gateforum.com/" target="_blank">GATE Forum Resources</a></li>
+        </ul>

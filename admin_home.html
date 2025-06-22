@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Home - E-Learning Hub</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- FontAwesome Link -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+        }
+        
+        .navbar {
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links li a:hover {
+            color: #ffcc00;
+        }
+        
+        .nav-links li a i {
+            font-size: 1.2rem;
+        }
+        
+        .hero {
+            position: relative;
+            background: url('https://img.freepik.com/premium-photo/3d-computer-books-about-learning_387680-513.jpg?w=996') no-repeat center/cover fixed;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        
+        .hero-flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            z-index: 2;
+            position: relative;
+            flex-wrap: wrap;
+            /* Make it responsive on smaller screens */
+            padding: 20px;
+        }
+        
+        .hero-content {
+            max-width: 400px;
+            text-align: left;
+        }
+        
+        .quote-box {
+            max-width: 400px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 10px 4px 100px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            color: #003366;
+            font-style: italic;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            color: #ffcc00;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 500;
+        }
+        
+        .section {
+            padding: 20px 20px;
+            margin-top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">E-Learning Hub 📚</div>
+            <ul class="nav-links">
+                <li><a href="upload.html"><i class="fas fa-upload"></i> Upload Study Material</a></li>
+                <li><a href="upload_news.php"><i class="fas fa-newspaper"></i> Upload News</a></li>
+                <li><a href="viewfeedback.php"><i class="fas fa-comments"></i> See Feedback</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-flex-container">
+            <div class="hero-content">
+                <h1>Welcome, <span class="highlight">Admin</span></h1>
+                <p>Use the options above to manage content for the E-Learning Hub.</p>
+            </div>
+            <div class="quote-box">
+                "Success doesn’t come from what you do occasionally. It comes from what you do consistently. Upload quality, shape bright futures."
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 E-Learning Hub. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

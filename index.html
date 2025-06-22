@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Learning Hub</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">E-Learning Hub 📚</div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Single Learning Platform <span class="highlight">For Engineering</span> Students</h1>
+            <p>Enhance your learning experience with structured courses, video tutorials, and syllabus-based content curated for engineering students.</p>
+            <button class="get-started-btn" onclick="openLoginModal()">GET STARTED</button>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to E-Learning Hub, a platform dedicated to providing engineering students with the best learning resources, including video lectures, textbooks, and structured courses.</p>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <ul>
+            <li>📚 Comprehensive Study Materials</li>
+            <li>🎥 Video Lectures & Tutorials</li>
+            <li>📖 Syllabus-based Learning</li>
+            <li>🔍 Search & Filter Study Materials</li>
+            <li>🗨️ Interactive Chatbot Assistance</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: support@elearninghub.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Follow us on social media for updates!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 E-Learning Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Select Login Type</h2>
+            <div class="login-options">
+                <button onclick="showLoginForm('admin')">Admin Login</button>
+                <button onclick="showLoginForm('student')">Student Login</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="form-section hidden">
+                <h3 id="loginTitle">Login</h3>
+                <input type="email" id="loginEmail" placeholder="Email" required />
+                <input type="password" id="loginPassword" placeholder="Password" required />
+                <button onclick="handleLogin()">Login</button>
+                <p id="registerLink">Not registered? <a href="#" onclick="showRegistrationForm()">Register here</a></p>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="registrationForm" class="form-section hidden" action="register.php" method="POST" enctype="multipart/form-data" onsubmit="return validateEmail()">
+                <h3>Register</h3>
+                <input type="text" name="full_name" placeholder="Full Name" required />
+                <input type="text" name="department" placeholder="Department" required />
+                <input type="text" name="year" placeholder="write 1/2/3/4 only" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Create Password" required />
+                <button type="submit" name="submit">Register</button>
+                <p>Already registered? <a href="#" onclick="showLoginAgain()">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener("click", function(event) {
+                const targetSection = document.querySelector(this.getAttribute("href"));
+                if (targetSection) {
+                    event.preventDefault();
+                    targetSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Modal Logic
+        let currentLoginType = '';
+
+        function openLoginModal() {
+            document.getElementById("loginModal").style.display = "block";
+            document.getElementById("loginForm").classList.add("hidden");
+            document.getElementById("registrationForm").classList.add("hidden");
+            document.getElementById("loginEmail").value = "";
+            document.getElementById("loginPassword").value = "";
+        }
+
+        function closeLoginModal() {
+            document.getElementById("loginModal").style.display = "none";
+            document.getElementById("loginEmail").value = "";
+            document.getElementById("loginPassword").value = "";
+        }
+
+        function showLoginForm(userType) {
+            currentLoginType = userType;
+            const title = userType === 'admin' ? "Admin Login" : "Student Login";
+            document.getElementById("loginTitle").textContent = title;
+            document.getElementById("loginForm").classList.remove("hidden");
+            document.getElementById("registrationForm").classList.add("hidden");
+            document.getElementById("registerLink").style.display = userType === 'admin' ? 'none' : 'block';
+        }
+
+        function showRegistrationForm() {
+            document.getElementById("loginForm").classList.add("hidden");
+            document.getElementById("registrationForm").classList.remove("hidden");
+        }
+
+        function showLoginAgain() {
+            document.getElementById("registrationForm").classList.add("hidden");
+            document.getElementById("loginForm").classList.remove("hidden");
+        }
+
+        function validateEmail() {
+            var email = document.querySelector('input[name="email"]').value;
+            var emailPattern = /^[a-zA-Z0-9._-]+@(gmail|yahoo|outlook|icloud)\.com$/;
+            if (!emailPattern.test(email)) {
+                alert("Invalid email format. Please use gmail, yahoo, outlook or icloud.");
+                return false;
+            }
+            return true;
+        }
+
+        function handleLogin() {
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+
+            if (currentLoginType === 'admin') {
+                if (email === 'admin' && password === 'password') {
+                    alert("Admin Login Successful!");
+                    window.location.href = "admin_home.html";
+                } else {
+                    alert("Invalid Admin Credentials!");
+                }
+            } else if (currentLoginType === 'student') {
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "student_login.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.onload = function() {
+                    if (this.responseText.trim() === "success") {
+                        alert("Student Login Successful!");
+                        document.getElementById("loginEmail").value = "";
+                        document.getElementById("loginPassword").value = "";
+                        window.location.href = "firstpg.php";
+                    } else {
+                        alert("Invalid Student Credentials!");
+                    }
+                };
+                xhr.send(`email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning Hub - Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* Navigation Bar Styling */
+        
+        body {
+            background: #f5f7fa;
+            margin: 0;
+            font-family: sans-serif;
+            background: url('https://img.freepik.com/premium-photo/3d-computer-books-about-learning_387680-513.jpg?w=996') no-repeat center/cover fixed;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 30px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* Dropdown */
+        
+        .dropdown,
+        .sub-dropdown,
+        .year-dropdown {
+            display: none;
+            position: absolute;
+            background: #444;
+            top: 30px;
+            left: 0;
+            z-index: 1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .dropdown a,
+        .sub-dropdown a,
+        .year-dropdown a {
+            display: block;
+            padding: 8px;
+            color: white;
+        }
+        
+        .nav-links li:hover>.dropdown,
+        .dropdown li:hover>.sub-dropdown,
+        .sub-dropdown li:hover>.year-dropdown {
+            display: block;
+        }
+        
+        .content {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .syllabus {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid orange;
+            display: none;
+        }
+        /* Parent list item */
+        
+        .nav-links li {
+            position: relative;
+        }
+        /* All dropdowns are initially hidden */
+        
+        .dropdown,
+        .sub-dropdown,
+        .year-dropdown {
+            display: none;
+            position: absolute;
+            background: #444;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 250px;
+        }
+        /* Show dropdown when hovering the parent or the dropdown itself */
+        
+        .nav-links li:hover>.dropdown,
+        .dropdown:hover,
+        .dropdown li:hover>.sub-dropdown,
+        .sub-dropdown:hover,
+        .sub-dropdown li:hover>.year-dropdown,
+        .year-dropdown:hover {
+            display: block;
+        }
+        /* Dropdown links */
+        
+        .dropdown a,
+        .sub-dropdown a,
+        .year-dropdown a {
+            display: block;
+            padding: 8px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        .dropdown a:hover,
+        .sub-dropdown a:hover,
+        .year-dropdown a:hover {
+            background: orange;
+            border-radius: 4px;
+        }
+        /* Feedback Form Container */
+        
+        .feedback-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #444;
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .stars {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        
+        .stars input {
+            display: none;
+        }
+        
+        .stars label {
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        
+        .stars input:checked~label {
+            color: gold;
+        }
+        
+        .stars label:hover,
+        .stars label:hover~label {
+            color: gold;
+        }
+        
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">E-Learning Hub📚</div>
+        <ul class="nav-links">
+            <li><a href="firstpg.php">Study Material</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="update_profile.php">Profile</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Feedback Form -->
+    <div class="feedback-container">
+        <h2>Student Feedback - E-Learning Hub</h2>
+        <form action="submitfeedback.php" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="year">Academic Year:</label>
+            <select id="year" name="year" required>
+        <option value="">-- Select Year --</option>
+        <option value="1">First Year</option>
+        <option value="2">Second Year</option>
+        <option value="3">Third Year</option>
+        <option value="4">Final Year</option>
+      </select>
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+    <option value="">-- Select Department --</option>
+    <option value="CSE">Computer Science and Engineering</option>
+    <option value="DS">Data Science Engineering</option>
+    <option value="AIML">AI & Machine Learning</option>
+    <option value="ENTC">Electronics and Telecommunication</option>
+    <option value="MECH">Mechanical</option>
+    <option value="CIVIL">Civil</option>
+    <option value="CHEM">Chemical</option>
+</select>
+
+            <label for="rating">Overall Rating:</label>
+            <div class="stars">
+                <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+
+
+            <label for="comments">Additional Comments:</label><br>
+            <textarea name="comments" id="comments" rows="4" cols="50" placeholder="Write your suggestions or feedback here..."></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

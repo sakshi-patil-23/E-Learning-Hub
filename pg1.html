@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧑‍🎓College Advertisement Portal🧑‍🎓</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+        
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 12px;
+        }
+        
+        nav ul li a.logout {
+            background-color: #e74c3c;
+            border-radius: 4px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background: #1abc9c;
+            color: white;
+        }
+        
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://doak.dypgroup.edu.in/wp-content/uploads/2020/08/eng_logo.png" alt="College Logo" class="logo">
+
+        <div class="title">🧑‍🎓College Advertisement Portal🧑‍🎓</div>
+
+        <nav>
+            <ul>
+                <li><a href="pg1.html">Home</a></li>
+                <li><a href="ad.html">Advertisements</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h3>Welcome to D.Y. Patil College of Engineering and Technology, Kasba Bawada, Kolhapur</h3>
+        <p>Find the latest events, announcements, and opportunities on campus.</p>
+    </section>
+
+    <div class="slideshow-container">
+        <img class="slide active" src="https://coek.dypgroup.edu.in/wp-content/uploads/2017/06/t1538554792_OJmiiK8OlI-1.jpg" alt="College Campus">
+        <img class="slide" src="https://image-static.collegedunia.com/public/college_data/images/appImage/13305_1444627014DYPCET_NEW.jpg?h=260&w=360&mode=crop" alt="College Campus">
+        <img class="slide" src="http://coek.dypgroup.edu.in//wp-content/uploads/2017/06/kb-building-1.jpg" alt="College Campus">
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 College Ad Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            let slides = document.getElementsByClassName("slide");
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

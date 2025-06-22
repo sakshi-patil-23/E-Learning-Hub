@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships for Engineering Students</title>
+    <style>
+        body {
+            background: #f5f7fa;
+            margin: 0;
+            font-family: sans-serif;
+            background: url('https://img.freepik.com/premium-photo/3d-computer-books-about-learning_387680-513.jpg?w=996') no-repeat center/cover fixed;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 15px 30px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 8px;
+            display: block;
+        }
+        
+        .dropdown,
+        .sub-dropdown,
+        .year-dropdown {
+            display: none;
+            position: absolute;
+            background: #444;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            border-radius: 5px;
+            padding: 12px 12px 10px 20px;
+            min-width: 200px;
+        }
+        
+        li:hover>.dropdown,
+        .dropdown:hover,
+        .dropdown li:hover>.sub-dropdown,
+        .sub-dropdown:hover,
+        .sub-dropdown li:hover>.year-dropdown,
+        .year-dropdown:hover {
+            display: block;
+        }
+        
+        a:hover {
+            background: orange;
+            border-radius: 4px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        
+        .card p {
+            color: #555;
+        }
+        
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            background: #2980b9;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        .card a:hover {
+            background: #1f6391;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">E-Learning Hub 📚</div>
+        <ul class="nav-links">
+            <li><a href="firstpg.php">Study Material</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="update_profile.php">Profile</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <h1>Scholarship Schemes for Engineering Students</h1>
+    <div class="container">
+        <div class="card">
+            <h3>Chhatrapati Shahu Maharaj EBC Scholarship</h3>
+            <p>For open category students with family income below ₹8 lakh.</p>
+            <a href="https://mahadbt.maharashtra.gov.in" target="_blank">Apply via MahaDBT</a>
+        </div>
+
+        <div class="card">
+            <h3>Dr. Panjabrao Deshmukh Hostel Scholarship</h3>
+            <p>For rural students staying in hostels. Up to ₹30,000 per year.</p>
+            <a href="https://mahadbt.maharashtra.gov.in" target="_blank">Apply via MahaDBT</a>
+        </div>
+
+        <div class="card">
+            <h3>AICTE Pragati Scholarship</h3>
+            <p>For girl students in technical education. ₹50,000 per year.</p>
+            <a href="https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>AICTE Saksham Scholarship</h3>
+            <p>For differently abled students in technical courses. ₹50,000 per year.</p>
+            <a href="https://www.aicte-india.org/schemes/students-development-schemes/Saksham/General-Instructions" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>Merit cum Means Scholarship</h3>
+            <p>For minority students. Tuition fee covered up to ₹20,000/year.</p>
+            <a href="https://www.minorityaffairs.gov.in/show_content.php?lang=1&level=1&ls_id=775&lid=827" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>Central Sector Scholarship</h3>
+            <p>For students scoring >80% in 12th. ₹10,000–₹20,000/year.</p>
+            <a href="https://www.education.gov.in/scholarships-education-loan-0" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>INSPIRE Scholarship</h3>
+            <p>For top 1% in 12th science stream. ₹80,000/year.</p>
+            <a href="https://www.online-inspire.gov.in/" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>L&T Build India Scholarship</h3>
+            <p>Final-year Civil/Electrical students. Covers tuition + job.</p>
+            <a href="https://www.lntecc.com/build-india-scholarship/" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>Tata Trusts Scholarship</h3>
+            <p>Need and merit-based support across disciplines.</p>
+            <a href="https://www.tatatrusts.org/Upload/Content_Files/scholarship-document-23-24.pdf" target="_blank">Apply Now</a>
+        </div>
+
+        <div class="card">
+            <h3>ONGC Scholarship</h3>
+            <p>For SC/ST/OBC/General-EWS engineering students. ₹48,000/year.</p>
+            <a href="https://ongcscholar.org/#/" target="_blank">Apply Now</a>
+        </div>
+    </div>
+</body>
+
+</html>
